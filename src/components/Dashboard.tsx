@@ -1,33 +1,14 @@
 import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ApiKeyInput } from "@/components/ApiKeyInput";
 import { LegalResearch } from "@/components/LegalResearch";
 import { DocumentDrafting } from "@/components/DocumentDrafting";
 import { GeminiService } from "@/services/geminiService";
 import { Search, FileText, BookOpen, Gavel, Scale } from "lucide-react";
 
 export const Dashboard = () => {
-  const [geminiService, setGeminiService] = useState<GeminiService | null>(null);
-  const [hasApiKey, setHasApiKey] = useState(false);
+  const [geminiService] = useState<GeminiService>(new GeminiService());
 
-  useEffect(() => {
-    const storedApiKey = localStorage.getItem('gemini_api_key');
-    if (storedApiKey) {
-      setGeminiService(new GeminiService(storedApiKey));
-      setHasApiKey(true);
-    }
-  }, []);
-
-  const handleApiKeySet = (apiKey: string) => {
-    if (apiKey) {
-      setGeminiService(new GeminiService(apiKey));
-      setHasApiKey(true);
-    } else {
-      setGeminiService(null);
-      setHasApiKey(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
@@ -44,8 +25,6 @@ export const Dashboard = () => {
             </p>
           </div>
 
-          {/* API Key Configuration */}
-          <ApiKeyInput onApiKeySet={handleApiKeySet} hasApiKey={hasApiKey} />
 
           {/* Main Dashboard */}
           <Card className="p-8">

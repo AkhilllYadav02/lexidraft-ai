@@ -8,7 +8,7 @@ import { GeminiService } from "@/services/geminiService";
 import { toast } from "sonner";
 
 interface LegalResearchProps {
-  geminiService: GeminiService | null;
+  geminiService: GeminiService;
 }
 
 export const LegalResearch = ({ geminiService }: LegalResearchProps) => {
@@ -17,11 +17,6 @@ export const LegalResearch = ({ geminiService }: LegalResearchProps) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleResearch = async () => {
-    if (!geminiService) {
-      toast.error("Please configure your API key first");
-      return;
-    }
-
     if (!query.trim()) {
       toast.error("Please enter a legal query");
       return;
@@ -62,7 +57,7 @@ export const LegalResearch = ({ geminiService }: LegalResearchProps) => {
           
           <Button 
             onClick={handleResearch} 
-            disabled={isLoading || !geminiService}
+            disabled={isLoading}
             variant="hero"
             className="w-full"
           >

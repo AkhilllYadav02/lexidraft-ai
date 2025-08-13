@@ -9,10 +9,10 @@ interface GeminiResponse {
 }
 
 export class GeminiService {
-  private apiKey: string;
+  private apiKey: string = "AIzaSyAhEx2yqNCn7xWN-slW3puy4o0gAFh6Z9E";
 
-  constructor(apiKey: string) {
-    this.apiKey = apiKey;
+  constructor() {
+    // API key is now hardcoded for direct usage
   }
 
   async generateContent(prompt: string): Promise<string> {

@@ -9,7 +9,7 @@ import { GeminiService } from "@/services/geminiService";
 import { toast } from "sonner";
 
 interface DocumentDraftingProps {
-  geminiService: GeminiService | null;
+  geminiService: GeminiService;
 }
 
 export const DocumentDrafting = ({ geminiService }: DocumentDraftingProps) => {
@@ -30,11 +30,6 @@ export const DocumentDrafting = ({ geminiService }: DocumentDraftingProps) => {
   ];
 
   const handleDraft = async () => {
-    if (!geminiService) {
-      toast.error("Please configure your API key first");
-      return;
-    }
-
     if (!documentType || !details.trim()) {
       toast.error("Please select document type and provide details");
       return;
@@ -93,7 +88,7 @@ export const DocumentDrafting = ({ geminiService }: DocumentDraftingProps) => {
           
           <Button 
             onClick={handleDraft} 
-            disabled={isLoading || !geminiService}
+            disabled={isLoading}
             variant="hero"
             className="w-full"
           >
