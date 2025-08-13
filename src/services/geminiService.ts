@@ -9,7 +9,7 @@ interface GeminiResponse {
 }
 
 export class GeminiService {
-  private apiKey: string = "AIzaSyAhEx2yqNCn7xWN-slW3puy4o0gAFh6Z9E";
+  private apiKey: string = "jhjhjhjh";
 
   constructor() {
     // API key is now hardcoded for direct usage
