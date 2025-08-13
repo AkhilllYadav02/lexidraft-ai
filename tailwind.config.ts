@@ -52,6 +52,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				'legal-navy': 'hsl(var(--legal-navy))',
+				'legal-navy-light': 'hsl(var(--legal-navy-light))',
+				'legal-gold': 'hsl(var(--legal-gold))',
+				'legal-gold-light': 'hsl(var(--legal-gold-light))',
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
