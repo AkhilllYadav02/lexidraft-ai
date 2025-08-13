@@ -23,14 +23,18 @@ export const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-                <Search className="h-5 w-5" />
-                Start Research
-              </Button>
-              <Button variant="accent" size="lg" className="text-lg px-8 py-4">
-                <FileText className="h-5 w-5" />
-                Draft Document
-              </Button>
+              <a href="/dashboard">
+                <Button variant="hero" size="lg" className="text-lg px-8 py-4">
+                  <Search className="h-5 w-5" />
+                  Start Research
+                </Button>
+              </a>
+              <a href="/dashboard">
+                <Button variant="accent" size="lg" className="text-lg px-8 py-4">
+                  <FileText className="h-5 w-5" />
+                  Draft Document
+                </Button>
+              </a>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8">
